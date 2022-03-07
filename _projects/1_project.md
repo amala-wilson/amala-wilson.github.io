@@ -20,7 +20,7 @@ category: travel
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    Abernathy Waterfront Park, Clemson (left), Table Rock State Park (center), Snowy Day in Central, SC (right)
 </div>
 
 <div class="row">
@@ -29,7 +29,7 @@ category: travel
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    Table Rock State Park
 </div>
 
 <div class="row">
@@ -38,7 +38,7 @@ category: travel
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    Sunset at Sassafras Mountain
 </div>
 
 
@@ -54,7 +54,7 @@ category: travel
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    Yellow Branch Falls (left), Keowee Toxaway State Park (center and right)
 </div>
 
 
@@ -64,6 +64,6 @@ category: travel
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    Keowee Toxaway State Park
 </div>
 
