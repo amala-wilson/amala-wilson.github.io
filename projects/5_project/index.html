@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amala Wilson | blog</title>
+    <title>Amala Wilson | Comparative Evaluation of Finetuned Faster R-CNN Model on Low-light Images</title>
     <meta name="author" content="Amala Varghese Wilson" />
     <meta name="description" content="Software Engineer | Privacy-Preserving Machine Learning Enthusiast
 " />
@@ -33,7 +33,7 @@
     <link rel="shortcut icon" href="/assets/img/android-chrome-512x512.png"/>
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://amala-wilson.github.io/blog/">
+    <link rel="canonical" href="https://amala-wilson.github.io/projects/5_project/">
     
     <!-- Dark Mode -->
     
@@ -99,21 +99,58 @@
 
     <!-- Content -->
     <div class="container mt-5">
-      <div class="post">
+      <!-- page.html -->
+        <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2></h2>
-  </div>
+          <header class="post-header">
+            <h1 class="post-title">Comparative Evaluation of Finetuned Faster R-CNN Model on Low-light Images</h1>
+            <p class="post-description"></p>
+          </header>
 
+          <article>
+            <hr>
 
-  <ul class="post-list">
-    
-  </ul>
+<p>Many state-of-the-art (SOTA) convolutional neural networks exist today due to the high availability of datasets. Research shows that the majority of the images in these datasets are visible light images. In fact, according to two researchers, only 2% of total images were low-light in successful public benchmark datasets such as PASCAL VOC, ImageNet and MS COCO. Human and object detection is important to recognize, detect and classify in low-light images just as it is important in visible-light images. For this purpose, my team and I examined the performance of a SOTA real-time object detection CNN called Faster R-CNN by incorporating it into different architectures which are constructed from a combination of image filters and another CNN called EnlightenGAN.</p>
 
-  
+<p>For our project, we decided to use the Faster R-CNN model provided by Detectron2, which is a Pytorch-based modular object detection library. The Faster R-CNN variation that we used consisted of ResNet50 as the backbone and a Feature Pyramid Network (FPN). The model was executed on an AWS EC2 instance with the Deep Learning Base AMI (Ubuntu 16.04) Version 19.3 that used the p2.xlarge GPU. In order to save on cost, Faster R-CNN was also executed on Google COLAB to run inference as well as finetune the model on our own custom dataset. Through transfer learning, we fine tuned the Faster R-CNN model using a combination of images from the Exclusively Dark dataset and our own set of low-light images. We used ImgLab to annotate our dataset in COCO format because Detectron2 supports this format. The second dataset was taken from COCO validation dataset. The other components that were used are two image filters, CLAHE and USM, and another CNN called EnlightenGAN.</p>
 
+<p>Out of the set of architectures we used, the one that showed the high accuracy is when dark images were fed into EnlightenGAN and then the output of EnlightenGAN was fed into finetuned Faster R-CNN.</p>
+
+<p>For more information, please refer to the report</p>
+
+<style> .pdf-embed-wrap-124ffb28-285f-4575-9ac7-ef9fda48ffc1 { display:flex; flex-direction: column; width: 100%; height: 650px; } .pdf-embed-container-124ffb28-285f-4575-9ac7-ef9fda48ffc1 { height: 100%; } .pdf-link-124ffb28-285f-4575-9ac7-ef9fda48ffc1 { background-color: white; text-align: center; border-style: solid; } .pdf-embed-container-124ffb28-285f-4575-9ac7-ef9fda48ffc1 iframe { width: 100%; height: 100%; } </style>
+<div class="pdf-embed-wrap-124ffb28-285f-4575-9ac7-ef9fda48ffc1"> <div class="pdf-link-124ffb28-285f-4575-9ac7-ef9fda48ffc1"> <a href="/assets/pdf/cs256/CS256_ProjectReport.pdf" target="_blank">View PDF</a> </div> <div class="pdf-embed-container-124ffb28-285f-4575-9ac7-ef9fda48ffc1"> <iframe src="/assets/pdf/cs256/CS256_ProjectReport.pdf" frameborder="0" allowfullscreen=""></iframe> </div> </div>
+
+<p>and the GitHub repository for this project</p>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/ksheeraj/CS256-AI-ObjectDetection" target="_blank" rel="noopener noreferrer">https://github.com/ksheeraj/CS256-AI-ObjectDetection</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+<div class="jekyll-linkpreview-image">
+  <a href="https://github.com/ksheeraj/CS256-AI-ObjectDetection" target="_blank" rel="noopener noreferrer">
+    <img src="https://opengraph.githubassets.com/5e5a9c3fdceb3b063bd418e1ee0adbd875fc1bb75df98c5af9eb1a0d6340c216/ksheeraj/CS256-AI-ObjectDetection">
+  </a>
 </div>
+
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/ksheeraj/CS256-AI-ObjectDetection" target="_blank" rel="noopener noreferrer">GitHub - ksheeraj/CS256-AI-ObjectDetection</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Contribute to ksheeraj/CS256-AI-ObjectDetection development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//github.com" target="_blank">github.com</a>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+          </article>
+
+        </div>
 
     </div>
 
