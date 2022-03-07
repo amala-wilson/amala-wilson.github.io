@@ -1,80 +1,26 @@
 ---
 layout: page
-title: project 5
-description: a project with a background image
-img: assets/img/1.jpg
-importance: 3
-category: fun
+title: Comparative Evaluation of Finetuned Faster R-CNN Model on Low-light Images
+#description: 
+img: assets/img/cs256/cs256.png
+importance: 1
+category: work
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+---
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Many state-of-the-art (SOTA) convolutional neural networks exist today due to the high availability of datasets. Research shows that the majority of the images in these datasets are visible light images. In fact, according to two researchers, only 2% of total images were low-light in successful public benchmark datasets such as PASCAL VOC, ImageNet and MS COCO. Human and object detection is important to recognize, detect and classify in low-light images just as it is important in visible-light images. For this purpose, my team and I examined the performance of a SOTA real-time object detection CNN called Faster R-CNN by incorporating it into different architectures which are constructed from a combination of image filters and another CNN called EnlightenGAN.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+For our project, we decided to use the Faster R-CNN model provided by Detectron2, which is a Pytorch-based modular object detection library. The Faster R-CNN variation that we used consisted of ResNet50 as the backbone and a Feature Pyramid Network (FPN). The model was executed on an AWS EC2 instance with the Deep Learning Base AMI (Ubuntu 16.04) Version 19.3 that used the p2.xlarge GPU. In order to save on cost, Faster R-CNN was also executed on Google COLAB to run inference as well as finetune the model on our own custom dataset. Through transfer learning, we fine tuned the Faster R-CNN model using a combination of images from the Exclusively Dark dataset and our own set of low-light images. We used ImgLab to annotate our dataset in COCO format because Detectron2 supports this format. The second dataset was taken from COCO validation dataset. The other components that were used are two image filters, CLAHE and USM, and another CNN called EnlightenGAN.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+Out of the set of architectures we used, the one that showed the high accuracy is when dark images were fed into EnlightenGAN and then the output of EnlightenGAN was fed into finetuned Faster R-CNN.
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal it's glory in the next row of images.
+For more information, please refer to the report
 
+{% pdf "/assets/pdf/cs256/CS256_ProjectReport.pdf" %}
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+and the GitHub repository for this project
 
+{% linkpreview "https://github.com/ksheeraj/CS256-AI-ObjectDetection" %}
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-```
-{% endraw %}
+---

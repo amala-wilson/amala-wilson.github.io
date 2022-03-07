@@ -1,80 +1,25 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
-img:
-importance: 4
-category: fun
+title: Business Context Aware Data Center Monitoring
+#description: 
+img: assets/img/cs274/cs274.png
+importance: 1
+category: work
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+---
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Ecommerce applications, which are built using a series of technologies, help businesses to use the Internet to conduct their business processes online. These ecommerce applications can either be found deployed in a private data center or the cloud. It’s important for businesses to proactively monitor the data center in which their application is deployed in because any data center downtime can lead a business to lose hundreds of thousands of dollars. In fact, according to a white paper written by Emerson, the average cost of data center downtime was approximately $5,600 per minute. To prevent businesses from losing money, it’s imperative to monitor data centers. System log data can be collected over a period of time to analyze the patterns of computation and storage, which are essential resources needed to execute ecommerce applications and others. By analyzing and recognizing how much compute, storage and network resources are being used over a period of time, we can predict what kind of situations arise so that appropriate maintenance can be done before the application stops running. For this purpose, I incorporated ElasticSearch, Beats, Kibana, and 2 machine learning (ML) models (Standard Logistic Regression and Multinomial Logistic Regression).
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal it's glory in the next row of images.
+System and database log data were collected using Filebeat and Metricbeat, which are lightweight data shippers that are used to capture operational data. Metricbeat was used to collect system performance metric data from my local system. Filebeat was used to collect log data from MongoDB which was utilized in an ecommerce application that I found online. This data is then stored in inverted indices within Elasticsearch, which is a distributed search and analytics engine for all types of data. Essential data was extracted with the help of APIs to prepare training and testing datasets for the ML models. I trained two standard logistic regression models, one for CPU usage and another one for memory usage, using a dataset from GWA-T-12 Bitbrains distributed data center that consisted of performance metrics of 1,750 virtual machines. After testing this model on my local system data, the memory model was able to only achieve 28% accuracy. The CPU model was able to achieve 98% accuracy. The multinomial logistic regression model was trained on a dataset that consisted of performance metrics of a MongoDB database. This model was able to achieve 69% accuracy. Kibana was used as a visualization tool to view my local system in real-time.
 
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+For more information, please refer to the report
 
+{% pdf "/assets/pdf/cs274/CS274_Report.pdf" %}
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+and the GitHub repository for this project
 
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-```
-{% endraw %}
+{% linkpreview "https://github.com/amala-wilson/CS274_Project" %}
+
+---
