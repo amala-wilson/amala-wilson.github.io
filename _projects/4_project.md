@@ -17,6 +17,6 @@ Through this research we show that retraining the classifier layer of the merged
 
 For more information, please refer to the report of my M.S. writing project.
 
-{% pdf "/assets/pdf/cs298/CS298_report.pdf" %}
+{% pdf "/assets/pdf/cs298/cs298_report.pdf" %}
 
 ---
